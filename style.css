@@ -1,0 +1,20 @@
+.top {
+    text-align: center;
+}
+.questions {
+    align-items: center;
+}
+#quiz {
+    width: min(90%, 400px);
+    margin-left: auto;
+    margin-right: auto;
+}
+p {
+    text-align: center;
+}
+.all { 
+    border: 5px solid black;
+    padding: 50px;
+    margin: auto;
+    width: min(90%, 500px);
+}

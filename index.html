@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Best Quiz</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    <div class="all">
+        <header class="top">
+            <h1>
+                The Possible Quiz
+            </h1>
+        </header>
+        <div class="questions">
+            <form id="quiz">
+                <fieldset>
+                    <legend id="question1">What Is 1+1?</legend>
+
+                    <label>
+                        <input id="input1" type="radio" name="q1" value="2" required>
+                        <span id="answer1">2</span>
+                    </label>
+
+                    <label>
+                        <input id="input2" type="radio" name="q1" value="1">
+                        <span id="answer2">1</span>
+                    </label>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="result" aria-live="polite"></p>
+            <p id="score">Correct answers: 0</p>
+        </div>
+    </div>
+        <script>
+            const quiz = document.querySelector("#quiz");
+            const result = document.querySelector("#result");
+            const scoreDisplay = document.querySelector("#score");
+            let score = 0;
+            const question1 = document.querySelector("#question1");
+            let questionNumber = 1;
+            const answer1 = document.querySelector("#answer1");
+            const answer2 = document.querySelector("#answer2");
+            const input1 = document.querySelector("#input1");
+            const input2 = document.querySelector("#input2");
+
+            quiz.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const selectedAnswer = new FormData(quiz).get("q1");
+
+            if (questionNumber === 1) {
+                if (selectedAnswer === "2") {
+                    score += 1;
+                    scoreDisplay.textContent = "Correct answers: " + score;
+                    result.textContent = "Correct!";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="What does the fox say?";
+                        answer1.textContent="high pitched barks";
+                        answer2.textContent="Hi";
+                        input1.value="barks";
+                        input2.value="Hi";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=2;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                } else {
+                    result.textContent = "Not quite.";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="What does the fox say?";
+                        answer1.textContent="high pitched barks";
+                        answer2.textContent="Hi";
+                        input1.value="barks";
+                        input2.value="Hi";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=2;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                }
+            }
+            else if (questionNumber === 2) {
+                if (selectedAnswer === "barks") {
+                    score += 1;
+                    scoreDisplay.textContent = "Correct answers: " + score;
+                    result.textContent = "Correct!";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="Hello?";
+                        answer1.textContent="What.";
+                        answer2.textContent="Hi!";
+                        input1.value="What";
+                        input2.value="Hi";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=3;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                } else {
+                    result.textContent = "Not quite.";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="Hello?";
+                        answer1.textContent="What.";
+                        answer2.textContent="Hi!";
+                        input1.value="What";
+                        input2.value="Hi";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=3;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                }
+            }
+            else if (questionNumber === 3) {
+                if (selectedAnswer === "Hi") {
+                    score += 1;
+                    scoreDisplay.textContent = "Correct answers: " + score;
+                    result.textContent = "Correct!";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="What is html?";
+                        answer1.textContent="Hyper text markup language.";
+                        answer2.textContent="something?";
+                        input1.value="Html";
+                        input2.value="Something";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=4;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                } else {
+                    result.textContent = "Not quite.";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="What is html?";
+                        answer1.textContent="Hyper text markup language.";
+                        answer2.textContent="something?";
+                        input1.value="Html";
+                        input2.value="Something";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=4;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                }
+            }
+            else if (questionNumber === 4) {
+                if (selectedAnswer === "Html") {
+                    score += 1;
+                    scoreDisplay.textContent = "Correct answers: " + score;
+                    result.textContent = "Correct!";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="whats 2x2?";
+                        answer1.textContent="4";
+                        answer2.textContent="four";
+                        input1.value="4";
+                        input2.value="four";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=5;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                } else {
+                    result.textContent = "Not quite.";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="whats 2x2?";
+                        answer1.textContent="4";
+                        answer2.textContent="four";
+                        input1.value="4";
+                        input2.value="four";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=5;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                }
+            }
+            else if (questionNumber === 5) {
+                if (selectedAnswer === "4") {
+                    score += 1;
+                    scoreDisplay.textContent = "Correct answers: " + score;
+                    result.textContent = "Correct!";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="How are you doing?";
+                        answer1.textContent="Good.";
+                        answer2.textContent="Bad.";
+                        input1.value="good";
+                        input2.value="bad";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=6;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                } else {
+                    result.textContent = "Not quite.";
+                    quiz.querySelector('button[type="submit"]').disabled = true;
+                    setTimeout(function(){
+                        question1.textContent="How are you doing?";
+                        answer1.textContent="Good.";
+                        answer2.textContent="Bad.";
+                        input1.value="good";
+                        input2.value="bad";
+                        input1.checked = false;
+                        input2.checked = false;
+                        questionNumber=6;
+                        quiz.querySelector('button[type="submit"]').disabled = false;
+                    }, 500);
+                }
+            }
+            else if (questionNumber === 6) {
+
+                quiz.querySelector('button[type="submit"]').disabled = true;
+                if (selectedAnswer === "good") {
+                    score += 1;
+                    scoreDisplay.textContent = "Correct answers: " + score;
+                    result.textContent = "Correct!";
+                } else {
+                    result.textContent = "Not quite.";
+                }
+            setTimeout(function(){
+                question1.textContent="Quiz Finished";
+                answer1.textContent="G'day lad";
+                answer2.textContent="G'day lady";
+
+                const percentage = Math.round((score / 6) * 100);
+                scoreDisplay.textContent=`Final score: ${score} out of 6 (${percentage}%)`;
+                quiz.querySelector('button[type="submit"]').disabled = true;
+            }, 500);
+            }
+            });
+        </script>
+    </body>
+</html>
